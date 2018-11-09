@@ -8,14 +8,14 @@
     // Including connection info (including database password) from outside
     // the public HTML directory means it is not exposed by the web server,
     // so it is safer than putting it directly in php code:
-    include("/etc/php/pdo-beers.php");//this needs to be our DB
+    include("/home/vm_nos3/VendIt/store/dbconnect.php");//this needs to be our DB
     $dbh = dbconnect();
   } catch (PDOException $e) {
     print "Error connecting to the database: " . $e->getMessage() . "<br/>";
     die();
   }
   try {
-      $st = $dbh->query('SELECT name FROM Serves WHERE id = *SOME INPUT*);//these need an input
+      $st = $dbh->query('SELECT name FROM Vending_Machine);
       if (($myrow = $st->fetch())) {
   ?>
  /*  <form method="post" action="drinker-info.php">
